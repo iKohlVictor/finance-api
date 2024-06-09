@@ -17,10 +17,6 @@ export class User {
     phoneNumber: string;
     password: string;
   }) {
-    if (!data.phoneNumber) {
-      throw Error('phoneNumber is not optional');
-    }
-
     this.name = data.name;
     this.email = new UserEmail(data.email).email;
     this.password = new UserPassword(data.password).password;
